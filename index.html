@@ -13,13 +13,13 @@
     --navy-800:#123059;
     --navy-700:#1E4976;
     --navy-600:#2E699E;
-    --slate-600:#55606B;
-    --slate-500:#8B96A1;
-    --slate-100:#E1E4E8;
-    --slate-050:#F1F2F4;
-    --slate-deep:#C3C9D0;
-    --silver:#F2F3F5;
-    --silver-100:#E6E8EB;
+    --bluegray-600:#4C6478;
+    --bluegray-500:#7C97AC;
+    --bluegray-100:#D8E2E9;
+    --bluegray-050:#EEF2F5;
+    --bluegray-deep:#AFC2CF;
+    --silver:#F1F1F2;
+    --silver-100:#E3E3E5;
     --white:#FFFFFF;
     --line:#D7DBE0;
     --neutral:#6B6F75;
@@ -70,7 +70,7 @@
     display:flex; align-items:center; gap:8px;
     white-space:nowrap;
   }
-  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--slate-600);display:inline-block;}
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--bluegray-600);display:inline-block;}
   .topnav{display:flex; gap:20px; flex:1; overflow-x:auto;}
   .topnav a{
     font-family:var(--mono);
@@ -82,10 +82,10 @@
     border-bottom:2px solid transparent;
     transition:border-color .15s ease, color .15s ease;
   }
-  .topnav a:hover{border-color:var(--slate-600);}
+  .topnav a:hover{border-color:var(--bluegray-600);}
   .searchbox{
     display:flex; align-items:center; gap:6px;
-    background:var(--slate-100);
+    background:var(--bluegray-100);
     border:1px solid var(--line);
     border-radius:8px;
     padding:6px 10px;
@@ -128,8 +128,8 @@
   }
   .avatar{
     width:104px; height:104px; border-radius:50%;
-    border:2px dashed var(--slate-600);
-    background:var(--slate-100);
+    border:2px dashed var(--bluegray-600);
+    background:var(--bluegray-100);
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:4px; color:var(--navy-700);
     margin-bottom:16px;
@@ -143,22 +143,22 @@
   .side-contact li{margin-bottom:8px; display:flex; gap:8px; align-items:flex-start; color:var(--ink);}
   .side-contact li svg{flex-shrink:0; margin-top:3px; opacity:.6;}
   .side-contact a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
-  .side-contact a:hover{border-color:var(--slate-600); color:var(--navy-700);}
+  .side-contact a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
 
   .side-block-title{
     font-family:var(--mono); font-size:0.7rem; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--slate-600); margin:26px 0 10px;
+    color:var(--bluegray-600); margin:26px 0 10px;
   }
   .toc{list-style:none; font-size:0.86rem;}
   .toc li a{
     display:block; padding:5px 0; color:var(--ink); text-decoration:none; border-left:2px solid transparent; padding-left:10px;
   }
-  .toc li a:hover{border-color:var(--slate-600); color:var(--navy-700);}
+  .toc li a:hover{border-color:var(--bluegray-600); color:var(--navy-700);}
 
   .tagcloud{display:flex; flex-wrap:wrap; gap:6px;}
   .tag{
     font-family:var(--mono); font-size:0.68rem;
-    background:var(--slate-100); color:var(--navy-900);
+    background:var(--bluegray-100); color:var(--navy-900);
     border:1px solid var(--line);
     padding:3px 8px; border-radius:5px;
   }
@@ -181,18 +181,18 @@
     background:radial-gradient(circle at 90% -10%, rgba(193,93,122,0.45), transparent 60%);
     pointer-events:none;
   }
-  .hero-label{font-family:var(--mono); font-size:0.75rem; color:var(--slate-100); letter-spacing:.05em; position:relative;}
+  .hero-label{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-100); letter-spacing:.05em; position:relative;}
   .hero-name{font-family:var(--display); font-size:1.9rem; font-weight:700; margin-top:12px; position:relative;}
-  .hero-role{font-size:1rem; color:var(--slate-100); margin-top:4px; font-weight:500; position:relative;}
+  .hero-role{font-size:1rem; color:var(--bluegray-100); margin-top:4px; font-weight:500; position:relative;}
   .hero-tagline{font-size:0.98rem; color:#D7DEE5; margin-top:14px; max-width:56ch; line-height:1.55; position:relative;}
 
   section{margin-bottom:56px; scroll-margin-top:80px;}
   .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:20px;}
   .section-head h2{font-family:var(--display); font-size:1.5rem; color:var(--navy-900); font-weight:700;}
-  .section-head .path{font-family:var(--mono); font-size:0.75rem; color:var(--slate-600);}
+  .section-head .path{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
 
   .readme{
-    background:var(--slate-050);
+    background:var(--bluegray-050);
     border:1px solid var(--line);
     border-left:4px solid var(--navy-700);
     border-radius:0 8px 8px 0;
@@ -221,13 +221,13 @@
   .entry:hover{box-shadow:0 6px 18px rgba(30,73,118,0.14); transform:translateY(-1px);}
   .entry-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; align-items:center; margin-bottom:4px;}
   .entry-version{font-family:var(--mono); font-weight:600; color:var(--navy-700); font-size:0.95rem;}
-  .entry-dates{font-family:var(--mono); font-size:0.75rem; color:var(--slate-600);}
+  .entry-dates{font-family:var(--mono); font-size:0.75rem; color:var(--bluegray-600);}
   .entry-company{font-family:var(--display); font-weight:600; font-size:1.05rem; margin-bottom:2px;}
   .entry-note{font-size:0.82rem; color:var(--neutral); margin-bottom:14px;}
   .entry ul{list-style:none;}
   .entry li{
     display:flex; gap:10px; padding:6px 0; font-size:0.92rem; align-items:flex-start;
-    border-top:1px solid var(--slate-050);
+    border-top:1px solid var(--bluegray-050);
   }
   .entry li:first-child{border-top:none;}
   .commit-tag{
@@ -235,20 +235,20 @@
     padding:2px 6px; border-radius:4px; flex-shrink:0; margin-top:2px;
     white-space:nowrap;
   }
-  .tag-feat{background:var(--slate-100); color:var(--navy-700);}
-  .tag-fix{background:var(--slate-deep); color:var(--navy-900);}
-  .tag-docs{background:var(--slate-050); color:var(--navy-600);}
+  .tag-feat{background:var(--bluegray-100); color:var(--navy-700);}
+  .tag-fix{background:var(--bluegray-deep); color:var(--navy-900);}
+  .tag-docs{background:var(--bluegray-050); color:var(--navy-600);}
   .tag-perf{background:var(--silver-100); color:var(--navy-700);}
   .tag-chore{background:var(--neutral-bg); color:var(--neutral);}
 
   /* skills */
   .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
   .skill-group{border:1px solid var(--line); border-radius:10px; padding:16px 18px; background:var(--white);}
-  .skill-group h3{font-family:var(--mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:.04em; color:var(--slate-600); margin-bottom:10px;}
+  .skill-group h3{font-family:var(--mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:.04em; color:var(--bluegray-600); margin-bottom:10px;}
   .skill-badges{display:flex; flex-wrap:wrap; gap:6px;}
   .badge{
     font-family:var(--mono); font-size:0.72rem;
-    background:var(--slate-100); color:var(--navy-900);
+    background:var(--bluegray-100); color:var(--navy-900);
     border:1px solid var(--line); padding:4px 9px; border-radius:5px;
   }
 
@@ -258,11 +258,11 @@
   .ref-list li:first-child{border-top:none;}
   .ref-list .req-tag{font-family:var(--mono); font-size:0.68rem; font-weight:600; margin-top:2px;}
   .req-tag.req{color:var(--navy-700);}
-  .req-tag.cert{color:var(--slate-600);}
+  .req-tag.cert{color:var(--bluegray-600);}
 
   /* footer terminal */
   footer{
-    background:var(--navy-900); color:var(--slate-100);
+    background:var(--navy-900); color:var(--bluegray-100);
     padding:30px 40px 40px; margin-top:20px;
   }
   .terminal{
@@ -272,20 +272,20 @@
     border:1px solid var(--navy-700);
   }
   .terminal .line{margin-bottom:6px;}
-  .terminal .prompt{color:var(--slate-500);}
+  .terminal .prompt{color:var(--bluegray-500);}
   .terminal .out{color:#C7CDD3; padding-left:20px;}
-  .cursor{display:inline-block; width:7px; height:1em; background:var(--slate-500); vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
+  .cursor{display:inline-block; width:7px; height:1em; background:var(--bluegray-500); vertical-align:text-bottom; animation:blink 1s steps(1) infinite;}
   @keyframes blink{0%,49%{opacity:1;} 50%,100%{opacity:0;}}
-  .footer-note{max-width:1180px; margin:16px auto 0; font-size:0.8rem; color:var(--slate-100); opacity:.75;}
-  .footer-note a{color:var(--slate-100);}
+  .footer-note{max-width:1180px; margin:16px auto 0; font-size:0.8rem; color:var(--bluegray-100); opacity:.75;}
+  .footer-note a{color:var(--bluegray-100);}
 
-  mark.hit{background:var(--slate-600); color:var(--white); border-radius:3px; padding:0 2px;}
+  mark.hit{background:var(--bluegray-600); color:var(--white); border-radius:3px; padding:0 2px;}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="brand"><span class="dot"></span> ginger.docs</div>
+  <div class="brand"><span class="dot"></span> ginger tabora</div>
   <nav class="topnav">
     <a href="#summary">summary</a>
     <a href="#experience">experience</a>
@@ -303,9 +303,8 @@
 <div class="layout">
 
   <aside class="sidebar">
-    <div class="avatar" aria-label="Profile photo placeholder">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M1 19v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="8" cy="7" r="4"/></svg>
-      <span>add profile photo</span>
+    <div class="avatar">
+      <img src="profile.jpg" alt="Ginger Tabora">
     </div>
     <div class="name">Ginger Tabora</div>
     <div class="role">Content Strategist &amp; Documentation Architect</div>
@@ -346,7 +345,7 @@
     <section aria-labelledby="summary-h">
       <div class="section-head"><h2 id="summary-h">Summary</h2><span class="path">/README.md</span></div>
       <div class="readme">
-        <p>Technical communicator with extensive experience producing technical content in Silicon Valley. Over ten years of experience documenting in Markdown and DITA, applying docs-as-code practices, and working in an Agile development environment.</p>
+        <p>Experienced technical communicator with extensive experience producing technical content in Silicon Valley. Over ten years of experience documenting in Markdown and DITA, applying docs-as-code practices, and working in an Agile development environment.</p>
         <p>Skilled at content strategy and all facets of the documentation development cycle — from analysis, design, and writing, to publishing. Excellent skills in effectively communicating complex technical information to non-technical audiences, with proven success improving existing content and processes.</p>
       </div>
     </section>
@@ -361,22 +360,15 @@
         </div>
         <div class="entry-company">JPMorgan Chase — Palo Alto, CA</div>
         <ul>
-          <li><span class="commit-tag tag-feat">feat</span> Defined content strategy recommendations for the JPMC Global Technology products based on user personas, product journeys, content standards, cross-product integrations, and identified content gaps; led documentation efforts across functional areas to execute the strategy.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Authored and maintained conceptual, reference, and task-based software documentation in Markdown using IntelliJ and GIT, including UI screens/strings and REST API documentation for the AI/ML platform.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Created and implemented procedures and process improvements for software product specifications, bulletins, and internal FAQs.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Used GitHub Copilot and Claude Code to automate Jira ticket creation/updates and Confluence page updates, and to run prompts checking documentation against department and company style guides for consistency and compliance.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Led migration of legacy documentation into a unified, governed documentation portal, building a tracking framework to measure migration scope, cross-references, and effort across the full product line.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Authored and maintained a shared style guide and taxonomy to unify content voice and structure across a multi-contributor documentation environment.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Established a Jira-based feedback and metrics pipeline to prioritize, track, and resolve documentation tickets, reducing recurring support inquiries.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Hosted recurring office hours engaging users, converting direct feedback and SME input into targeted knowledge updates.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Partnered with engineers and product managers — through 1:1s, training sessions, and cross-functional courses — to capture technical knowledge, build deep expertise in the firm's developer toolchain, and onboard engineers and SMEs as content contributors.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Built a structured stakeholder communications process to keep knowledge content aligned with upcoming product and platform changes.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Reviewed, created, or updated over 1500 pieces of content annually, ensuring continuous accuracy rather than periodic cleanup.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Created, operated, and maintained a docs-as-code repository for an entire product line of software development lifecycle tools.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Designed and developed comprehensive product documentation — conceptual overviews, step-by-step guides, API reference materials, and interactive tutorials — for developer audiences.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Independently troubleshot and maintained uptime of deployment pipelines to ensure successful docs-as-code releases.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Created and implemented a documentation request intake process using Jira Issue Collectors, reducing email volume, increasing visibility of the book of work, and providing a scalable, repeatable workflow for 20+ engineering teams.</li>
-          <li><span class="commit-tag tag-feat">feat</span> Made data-driven, user-centered documentation decisions by systematically gathering, analyzing, and implementing customer feedback via Adobe Analytics to continuously improve content effectiveness.</li>
+          <li><span class="commit-tag tag-feat">feat</span> Defined content strategy for the JPMC Artificial Intelligence/Machine Learning platform.</li>
+          <li><span class="commit-tag tag-feat">feat</span> Defined content strategy recommendations based on user personas, their journey with the JPMC Integrated Engineers Portal and AI/ML platform, content standards, needed improvements, integrations with other products, and content gaps.</li>
+          <li><span class="commit-tag tag-feat">feat</span> Led documentation efforts across functional areas to demonstrate the content strategy for the JPMC Integrated Engineers Portal and AI/ML platform.</li>
+          <li><span class="commit-tag tag-docs">docs</span> Authored and maintained conceptual, reference, and task-based software documentation in Markdown, using IntelliJ and GIT.</li>
+          <li><span class="commit-tag tag-docs">docs</span> Authored content for UI screens and UI strings.</li>
+          <li><span class="commit-tag tag-docs">docs</span> Documented REST APIs for the JPMC Artificial Intelligence/Machine Learning platform.</li>
+          <li><span class="commit-tag tag-perf">perf</span> Created and implemented procedures, as well as process improvements, for software product specifications, bulletins, and internal FAQs.</li>
+          <li><span class="commit-tag tag-perf">perf</span> Used GitHub Copilot and Claude Code to automate Jira ticket creation and updates, update Confluence pages, and create prompts to automate documentation and Jira tasks.</li>
+          <li><span class="commit-tag tag-fix">fix</span> Used GitHub Copilot and Claude Code to run prompts that check documentation against department and company style guides, ensuring consistency and compliance.</li>
         </ul>
       </div>
 
@@ -390,8 +382,6 @@
         <ul>
           <li><span class="commit-tag tag-docs">docs</span> Authored and updated REST API documentation in Markdown, following a docs-as-code workflow.</li>
           <li><span class="commit-tag tag-docs">docs</span> Authored and updated conceptual, reference, and task-based documentation in Markdown.</li>
-          <li><span class="commit-tag tag-docs">docs</span> Represented documentation during scrums and sprint planning meetings.</li>
-          <li><span class="commit-tag tag-docs">docs</span> Worked closely with engineering, product management, customer support, quality assurance, and professional services in an Agile development environment.</li>
         </ul>
       </div>
 
@@ -504,7 +494,6 @@
           <span class="entry-dates">2007</span>
         </div>
         <div class="entry-company">IBM Corporation — San Jose, CA</div>
-        <div class="entry-note">Short-term contract engagement.</div>
         <ul>
           <li><span class="commit-tag tag-docs">docs</span> Authored and maintained administration and user guides for the Total Storage Productivity Center products, using the IBM DITA authoring tool (supported by Arbortext).</li>
           <li><span class="commit-tag tag-docs">docs</span> Edited and updated online help documentation.</li>
@@ -617,7 +606,7 @@
     <div class="line"><span class="prompt">$</span> cat status.txt</div>
     <div class="line out">currently: shipping clear docs, one commit at a time.<span class="cursor"></span></div>
   </div>
-  <p class="footer-note">Hand-rolled HTML prototype — a Hugo port is next. Navy, slate, silver — on purpose.</p>
+  <p class="footer-note">Hand-rolled HTML prototype — a Hugo port is next. Navy, blue-gray, silver — on purpose.</p>
 </footer>
 
 <script>

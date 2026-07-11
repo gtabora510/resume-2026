@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec *)",
+      "PowerShell(Get-Command bundle -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command ruby -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command docker -ErrorAction SilentlyContinue)",
+      "Bash(docker exec *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:8080/portfolio/)",
+      "Bash(curl -s http://127.0.0.1:8080/portfolio/)",
+      "Bash(git commit -m ' *)",
+      "Bash(curl -s http://127.0.0.1:8080/portfolio/cv/ -o /tmp/cv_page3.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(curl -s http://127.0.0.1:8080/portfolio/cv/ -o /tmp/cv_page4.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(sed -n '/Skills<\\\\/h3>/,/Education<\\\\/h3>/p' /tmp/cv_page4.html)",
+      "Bash(grep -oE \"<strong>[^<]*</strong>|>[A-Za-z][^<]{5,}\")"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

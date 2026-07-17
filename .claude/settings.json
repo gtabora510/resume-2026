@@ -12,7 +12,19 @@
       "Bash(curl -s http://127.0.0.1:8080/portfolio/cv/ -o /tmp/cv_page3.html -w \"HTTP %{http_code}\\\\n\")",
       "Bash(curl -s http://127.0.0.1:8080/portfolio/cv/ -o /tmp/cv_page4.html -w \"HTTP %{http_code}\\\\n\")",
       "Bash(sed -n '/Skills<\\\\/h3>/,/Education<\\\\/h3>/p' /tmp/cv_page4.html)",
-      "Bash(grep -oE \"<strong>[^<]*</strong>|>[A-Za-z][^<]{5,}\")"
+      "Bash(grep -oE \"<strong>[^<]*</strong>|>[A-Za-z][^<]{5,}\")",
+      "Bash(curl -s -o /dev/null -w \"CV page: HTTP %{http_code}\\\\n\" http://127.0.0.1:8080/portfolio/cv/)",
+      "Bash(git rm *)",
+      "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo python:3.12-slim sh -c \"pip install rendercv --quiet 2>&1 | tail -1 && rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml 2>&1; rm -f assets/rendercv/rendercv_output/*.typ 2>/dev/null\")",
+      "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo python:3.12-slim sh -c \"pip install 'rendercv[full]' --quiet 2>&1 | tail -1 && rendercv render _data/cv.yml --settings assets/rendercv/settings.yaml 2>&1; rm -f assets/rendercv/rendercv_output/*.typ 2>/dev/null\")",
+      "Bash(curl -s http://127.0.0.1:8080/portfolio/cv/ -o /tmp/cv_final.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(mkdir -p .tmp-prettier-check)",
+      "Bash(tr -d '\\\\r')",
+      "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo node:20-alpine sh -c \"node_modules/.bin/prettier --config .prettierrc .tmp-prettier-check/cv.yml > .tmp-prettier-check/cv.formatted.yml 2>&1; diff -u .tmp-prettier-check/cv.yml .tmp-prettier-check/cv.formatted.yml\")",
+      "Bash(rm -rf .tmp-prettier-check)",
+      "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo node:20-alpine sh -c \"npm install --no-save prettier@^3.8.0 @shopify/prettier-plugin-liquid@^1.10.0 >/dev/null 2>&1; echo done\")",
+      "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo node:20-alpine sh -c \"node_modules/.bin/prettier --config .prettierrc .tmp-prettier-check/cv.yml --check\")",
+      "Bash(rm -rf .tmp-prettier-check node_modules)"
     ],
     "additionalDirectories": [
       "\\tmp"

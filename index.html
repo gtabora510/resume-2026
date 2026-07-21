@@ -58,7 +58,7 @@
     position:sticky; top:0; z-index:50;
     display:flex; align-items:center; gap:24px;
     padding:14px 28px;
-    background:rgba(250,244,236,0.92);
+    background:rgba(29,63,110,0.07);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
@@ -120,11 +120,8 @@
   .sidebar{
     padding:36px 24px;
     border-right:1px solid var(--line);
-    align-self:start;
     position:sticky;
-    top:65px;
-    height:calc(100vh - 65px);
-    overflow-y:auto;
+    top:0;
   }
   .avatar{
     width:104px; height:104px; border-radius:50%;
@@ -249,6 +246,40 @@
   .tag-perf{background:var(--silver-100); color:var(--navy-700);}
   .tag-product-management{background:var(--neutral-bg); color:var(--neutral);}
 
+  /* archive (collapsed older experience) */
+  .archive{
+    border:1px dashed var(--line);
+    border-radius:var(--radius);
+    background:rgba(29,63,110,0.07);
+    padding:14px 18px;
+    margin-bottom:18px;
+  }
+  .archive[open]{padding-bottom:20px;}
+  .archive summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--mono);
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--navy-700);
+    user-select:none;
+  }
+  .archive summary::-webkit-details-marker{display:none;}
+  .archive summary::before{
+    content:'▸';
+    display:inline-block;
+    color:var(--bluegray-600);
+    transition:transform .2s ease;
+  }
+  .archive[open] summary::before{transform:rotate(90deg);}
+  .archive summary:hover{color:var(--navy-900);}
+  .archive summary:hover::before{color:var(--navy-700);}
+  .archive .entry{margin-top:16px; margin-bottom:0;}
+  .archive .entry + .entry{margin-top:18px;}
+
   /* skills */
   .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
   .skill-group{border:1px solid var(--line); border-radius:10px; padding:16px 18px; background:var(--white);}
@@ -312,23 +343,6 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="brand"><span class="dot"></span> ginger tabora</div>
-  <nav class="topnav">
-    <a href="#summary">summary</a>
-    <a href="#strengths">strengths</a>
-    <a href="#experience">experience</a>
-    <a href="#skills">skills</a>
-    <a href="#education">education</a>
-    <a href="#portfolio">portfolio</a>
-  </nav>
-  <div class="searchbox">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input id="pageSearch" type="text" placeholder="search this profile…" aria-label="Search this resume">
-  </div>
-  <span class="version-badge">build 2026.07</span>
-</div>
-
 <div class="layout">
 
   <aside class="sidebar">
@@ -373,7 +387,7 @@
     </div>
 
     <section aria-labelledby="summary-h">
-      <div class="section-head"><h2 id="summary-h">Summary</h2><span class="path">/README.md</span></div>
+      <div class="section-head"><h2 id="summary-h">Summary</h2></div>
       <div class="readme">
         <p>Content strategist and writer with 10+ years shaping user-facing language for consumer and enterprise products in Silicon Valley — spanning UX writing and content design for UI screens and product flows, and technical documentation for developers and end users. Skilled at consolidating input from UX research, design, product, and engineering partners into content strategy, clear task-based content, and a cohesive product voice across multi-platform experiences.</p>
         <p>Proven track record turning complex workflows and requirements into streamlined, intuitive experiences, with deep experience in docs-as-code and Agile practices, DITA and Markdown authoring, single-sourcing migrations, and AI-assisted content workflows.</p>
@@ -381,7 +395,7 @@
     </section>
 
     <section id="strengths" aria-labelledby="strengths-h">
-      <div class="section-head"><h2 id="strengths-h">Core Strengths</h2><span class="path">/CORE_STRENGTHS.md</span></div>
+      <div class="section-head"><h2 id="strengths-h">Core Strengths</h2></div>
       <ul class="strengths-list">
         <li><strong>Technical Documentation</strong> — authoring conceptual, task-based, and reference content in DITA and Markdown using docs-as-code workflows.</li>
         <li><strong>UX Writing &amp; Content Design</strong> — shaping UI copy, microcopy, and product narratives grounded in user personas.</li>
@@ -392,7 +406,7 @@
     </section>
 
     <section id="experience" aria-labelledby="experience-h">
-      <div class="section-head"><h2 id="experience-h">Experience</h2><span class="path">/CHANGELOG.md</span></div>
+      <div class="section-head"><h2 id="experience-h">Experience</h2></div>
 
       <div class="entry">
         <div class="entry-head">
@@ -427,7 +441,7 @@
           <li>Authored and updated conceptual, reference, and task-based documentation in Markdown.</li>
         </ul>
       </div>
-
+    
       <div class="entry">
         <div class="entry-head">
           <span class="entry-version">Senior Information Developer → Lead Technical Writer</span>
@@ -446,6 +460,9 @@
           <li>Represented documentation during scrums and sprint planning meetings.</li>
         </ul>
       </div>
+    
+    <details class="archive">
+      <summary>Show more previous roles</summary>
 
       <div class="entry">
         <div class="entry-head">
@@ -566,10 +583,11 @@
           <li>Point person for collaborative projects with writers in other documentation groups (local and in Canada and India): responsible for scheduling, collecting information, reviewing, and coordinating the delivery of documentation to release engineering.</li>
         </ul>
       </div>
+    </details>
     </section>
 
     <section id="skills" aria-labelledby="skills-h">
-      <div class="section-head"><h2 id="skills-h">Skills</h2><span class="path">/package.json</span></div>
+      <div class="section-head"><h2 id="skills-h">Skills</h2></div>
       <div class="skill-groups">
         <div class="skill-group">
           <h3>Content Design, Technical Documentation, &amp; UX Writing</h3>
@@ -635,7 +653,7 @@
     </section>
 
     <section id="education" aria-labelledby="education-h">
-      <div class="section-head"><h2 id="education-h">Education</h2><span class="path">/requirements.txt</span></div>
+      <div class="section-head"><h2 id="education-h">Education</h2></div>
       <ul class="ref-list">
         <li><span class="req-tag req">req</span> BA, English (Technical Writing concentration) — San Jose State University</li>
         <li><span class="req-tag req">req</span> BA, Philosophy — San Jose State University</li>
@@ -645,7 +663,7 @@
     </section>
 
     <section id="portfolio" aria-labelledby="portfolio-h">
-      <div class="section-head"><h2 id="portfolio-h">Portfolio</h2><span class="path">/portfolio/README.md</span></div>
+      <div class="section-head"><h2 id="portfolio-h">Portfolio</h2></div>
       <div class="readme">
         <p>Portfolio coming soon.</p>
       </div>

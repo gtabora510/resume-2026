@@ -18,7 +18,7 @@
     --bluegray-100:#DDE1E3;
     --bluegray-050:#F0F1F2;
     --bluegray-deep:#8A949A;
-    --silver:#F2F2F2;
+    --silver:#D9D9D9;
     --silver-100:#E4E4E5;
     --white:#FFFFFF;
     --line:#D9DBDC;
@@ -371,10 +371,10 @@
 
     <div class="side-block-title">stack</div>
     <div class="tagcloud">
-      <span class="tag">Claude Code</span><span class="tag">Copilot</span><span class="tag">DITA</span>
-      <span class="tag">Git</span><span class="tag">HTML/CSS</span><span class="tag">Hugo</span>
-      <span class="tag">IntelliJ IDEA</span><span class="tag">Jekyll</span><span class="tag">Markdown</span>
-      <span class="tag">Visual Studio Code</span><span class="tag">YAML</span>
+      <span class="tag">CSS</span><span class="tag">Claude Code</span><span class="tag">Copilot</span>
+      <span class="tag">DITA</span><span class="tag">Git</span><span class="tag">HTML/CSS</span>
+      <span class="tag">Hugo</span><span class="tag">IntelliJ IDEA</span><span class="tag">Jekyll</span>
+      <span class="tag">Markdown</span><span class="tag">Visual Studio Code</span><span class="tag">YAML</span>
     </div>
   </aside>
 
@@ -683,39 +683,6 @@
   <p class="footer-note">Hand-rolled HTML prototype — a Hugo port is next. Navy blue and gunmetal — on purpose.</p>
 </footer>
 
-<script>
-  // Simple in-page search: press Enter to find & scroll to first match
-  const searchInput = document.getElementById('pageSearch');
-  let lastMark = null;
-  searchInput.addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter') return;
-    const query = searchInput.value.trim().toLowerCase();
-    if (lastMark){
-      const parent = lastMark.parentNode;
-      parent.replaceChild(document.createTextNode(lastMark.textContent), lastMark);
-      parent.normalize();
-      lastMark = null;
-    }
-    if (!query) return;
-    const main = document.querySelector('main');
-    const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, null);
-    let node;
-    while ((node = walker.nextNode())){
-      const idx = node.textContent.toLowerCase().indexOf(query);
-      if (idx !== -1){
-        const range = document.createRange();
-        range.setStart(node, idx);
-        range.setEnd(node, idx + query.length);
-        const mark = document.createElement('mark');
-        mark.className = 'hit';
-        range.surroundContents(mark);
-        mark.scrollIntoView({behavior: 'smooth', block: 'center'});
-        lastMark = mark;
-        break;
-      }
-    }
-  });
-</script>
 
 </body>
 </html>

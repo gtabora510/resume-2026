@@ -24,7 +24,8 @@
       "Bash(rm -rf .tmp-prettier-check)",
       "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo node:20-alpine sh -c \"npm install --no-save prettier@^3.8.0 @shopify/prettier-plugin-liquid@^1.10.0 >/dev/null 2>&1; echo done\")",
       "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v \"c:/Users/dgesc/projects/portfolio:/repo\" -w //repo node:20-alpine sh -c \"node_modules/.bin/prettier --config .prettierrc .tmp-prettier-check/cv.yml --check\")",
-      "Bash(rm -rf .tmp-prettier-check node_modules)"
+      "Bash(rm -rf .tmp-prettier-check node_modules)",
+      "Bash(git commit *)"
     ],
     "additionalDirectories": [
       "\\tmp"
